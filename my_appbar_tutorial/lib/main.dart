@@ -26,11 +26,6 @@ class MyAppBar extends StatelessWidget {
         title: Text('Appbar icons menu'),
         centerTitle: true,
         elevation: 0.0,
-        leading: IconButton(
-            onPressed: () {
-              print('button Pressed1');
-            },
-            icon: Icon(Icons.menu)),
         actions: [
           IconButton(
               onPressed: () {
@@ -43,6 +38,29 @@ class MyAppBar extends StatelessWidget {
               },
               icon: Icon(Icons.search)),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text('BBANTO'),
+              accountEmail: Text('lyi1233313@gmail.com'),
+              currentAccountPicture: Icon(
+                Icons.media_bluetooth_on_sharp,
+                size: 60.0,
+              ),
+              onDetailsPressed: () {
+                print('button Pressed4');
+              },
+              decoration: BoxDecoration(
+                  color: Colors.red[200],
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(40.0),
+                      bottomRight: Radius.circular(40.0))),
+            )
+          ],
+        ),
       ),
     );
   }
