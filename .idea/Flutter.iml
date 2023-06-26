@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_first/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_first/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_first/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/stateful_tutorial/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/stateful_tutorial/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/stateful_tutorial/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/snackbar_tutorial/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/snackbar_tutorial/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/snackbar_tutorial/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_first_vscode/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_first_vscode/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_first_vscode/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/listview_basic/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/listview_basic/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/listview_basic/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/listview_tutorial/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/listview_tutorial/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/listview_tutorial/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_appbar_tutorial/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_appbar_tutorial/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_appbar_tutorial/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_character_card/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_character_card/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/my_character_card/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/responsive_tutorial/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/responsive_tutorial/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/responsive_tutorial/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/navigator_tutorial/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/navigator_tutorial/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/navigator_tutorial/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/onboarding_screen_tutorial/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/onboarding_screen_tutorial/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tutorials/onboarding_screen_tutorial/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/aaa/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/aaa/build" />
+      <excludeFolder url="file://$MODULE_DIR$/aaa/.dart_tool" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>
