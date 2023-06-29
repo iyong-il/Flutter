@@ -17,15 +17,27 @@ class LogIn extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            MyButton(text: Text('Login with Google'), onPressed: () {
-              print('google button tapped');
-            }),
-            MyButton(text: Text('Login with Facebook'), onPressed: () {
-              print('Facebook button tapped');
-            }),
-            MyButton(text: Text('Login with Email'), onPressed: () {
-              print('Email button tapped');
-            }),
+            MyButton(
+                text: Text('Login with Google'),
+                onPressed: () {
+                  print('google button tapped');
+                }),
+            SizedBox(
+              height: 10,
+            ),
+            MyButton(
+                text: Text('Login with Facebook'),
+                onPressed: () {
+                  print('Facebook button tapped');
+                }),
+            SizedBox(
+              height: 10,
+            ),
+            MyButton(
+                text: Text('Login with Email'),
+                onPressed: () {
+                  print('Email button tapped');
+                }),
           ],
         ),
       ),

@@ -16,7 +16,9 @@ class MyButton extends StatelessWidget {
           ElevatedButton(
             child: text,
             onPressed: onPressed,
-            style: ElevatedButton.styleFrom(),
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(300, 50),
+            ),
           ),
         ],
       ),
