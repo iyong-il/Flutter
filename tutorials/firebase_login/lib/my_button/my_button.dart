@@ -10,16 +10,23 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ButtonTheme(
       height: 50.0,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Column(
         children: [
-          ElevatedButton(
-            child: text,
-            onPressed: onPressed,
-            style: ElevatedButton.styleFrom(
-              minimumSize: Size(300, 50),
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                child: text,
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(300, 50),
+                ),
+                onPressed: onPressed,
+              ),
+            ],
           ),
+          SizedBox(
+            height: 10,
+          )
         ],
       ),
     );
