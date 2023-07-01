@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:weather_api_practice/data/my_location.dart';
+import 'package:weather_api_practice/data/network.dart';
+import 'package:weather_api_practice/screens/weather_screen.dart';
+
+// 내 apikey가 아직 활성화가 되지 않아 코딩셰프님의 키를 받아서 사용
+const apikey = '0d0cc1131b44cd6ea0027e60e69dc007';
+
 
 class Loading extends StatefulWidget {
   const Loading({super.key});
@@ -11,12 +15,31 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
+
+
+  // 메서드
+  void getLocation() async {
+    MyLocation myLocation =  MyLocation();
+    await myLocation.getMyCurrentLocation();
+
+    double? lat = myLocation.latitude;
+    double? lon = myLocation.longitude;
+
+    String url = 'https://api.openweathermap.org/data/3.0/onecall?lat=$lat&lon=$lon&units=metric&appid=$apikey';
+    Network network = Network(url);
+
+    var weatherData = await network.getJsonData();
+    print('weatherData : $weatherData');
+
+    Navigator.push(context, MaterialPageRoute(builder: (context) => WeatherScreen(parseWeatherData: weatherData,)));
+  }
+
+  // 라이프 사이클
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     getLocation();
-    fetchData();
   }
 
   @override
@@ -34,30 +57,3 @@ class _LoadingState extends State<Loading> {
   }
 }
 
-void getLocation() async {
-  try {
-    LocationPermission permission = await Geolocator.requestPermission();
-    Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
-    print(position);
-  } catch (e) {
-    print('There was a problem with the internet connection.');
-  }
-}
-
-void fetchData() async {
-  http.Response response = await http.get(Uri.parse(
-      'https://samples.openweathermap.org/data/2.5/weather?q=London&appid=b1b15e88fa797225412429c1c50c122a1'));
-
-  if(response.statusCode == 200) {
-    String jsonData = response.body;
-
-    var myJson = jsonDecode(jsonData)['weather'][0]['description'];
-    var myWind = jsonDecode(jsonData)['wind']['speed'];
-    var myId = jsonDecode(jsonData)['id'];
-
-    print('myJson : $myJson');
-    print('myWind : $myWind');
-    print('myId : $myId');
-  }
-}
