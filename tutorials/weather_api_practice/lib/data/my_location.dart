@@ -12,8 +12,8 @@ class MyLocation {
       latitude = position.latitude;
       longitude = position.longitude;
 
-      print('latitude : $latitude');
-      print('longitude : $longitude');
+      // print('latitude : $latitude');
+      // print('longitude : $longitude');
     } catch (e) {
       print('There was a problem with the internet connection.');
     }

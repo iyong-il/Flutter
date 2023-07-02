@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key, this.parseWeatherData});
@@ -10,18 +12,19 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-
+  // 변수
   String? cityName;
   int? temperature;
 
+  // 라이프사이클
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     updateData(widget.parseWeatherData);
-
   }
 
+  // 메서드
   void updateData(dynamic weatherData) {
     cityName = weatherData['timezone'];
     double temp = weatherData['current']['temp'];
@@ -31,28 +34,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '$cityName',
-                style: TextStyle(
-                  fontSize: 30.0,
-                ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Text(
-                '$temperature °C',
-                style: TextStyle(
-                  fontSize: 30.0,
-                ),
-              ),
-            ],
-          ),
+      appBar: AppBar(
+        title: Text(''),
+      ),
+      body: Container(
+        child: Stack(
+          children: [
+            Image.asset(
+              'image/background.jpg',
+              fit: BoxFit.cover,
+            ),
+          ],
         ),
       ),
     );
