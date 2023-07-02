@@ -22,18 +22,28 @@ class _LoadingState extends State<Loading> {
     double? lat = myLocation.latitude;
     double? lon = myLocation.longitude;
 
-    String url =
+    String weatherUrl =
         'https://api.openweathermap.org/data/3.0/onecall?lat=$lat&lon=$lon&units=metric&appid=$apikey';
-    Network network = Network(url);
+    Network network = Network(weatherUrl);
 
+    String airUrl =
+        'http://api.openweathermap.org/data/2.5/air_pollution?lat=$lat&lon=$lon&appid=$apikey';
+    Network network2 = Network(airUrl);
+
+    // 날씨 데이터
     var weatherData = await network.getJsonData();
+    // 공기 데이터
+    var airData = await network2.getJsonData();
+
     print('weatherData : $weatherData');
+    print('airData : $airData');
 
     Navigator.push(
         context,
         MaterialPageRoute(
             builder: (context) => WeatherScreen(
                   parseWeatherData: weatherData,
+                  parseAirData: airData,
                 )));
   }
 

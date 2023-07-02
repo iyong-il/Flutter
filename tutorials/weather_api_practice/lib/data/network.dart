@@ -18,4 +18,5 @@ class Network {
       print('Na!!!!!!!');
     }
   }
+
 }
