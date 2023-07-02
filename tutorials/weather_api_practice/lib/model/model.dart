@@ -61,31 +61,34 @@ class Model {
   }
 
   Widget? getAirCondition(int index) {
-    if (index == 1) {
-      return Text(
-        '매우좋음',
-        style: TextStyle(color: Colors.indigo, fontWeight: FontWeight.bold),
-      );
-    } else if (index == 2) {
-      return Text(
-        '좋음',
-        style: TextStyle(color: Colors.indigo, fontWeight: FontWeight.bold),
-      );
-    } else if (index == 3) {
-      return Text(
-        '보통',
-        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
-      );
-    } else if (index == 4) {
-      return Text(
-        '나쁨',
-        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
-      );
-    } else if (index == 5) {
-      return Text(
-        '매우나쁨',
-        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
-      );
+    switch (index) {
+      case 1:
+        return Text(
+          '매우좋음',
+          style: TextStyle(color: Colors.indigo, fontWeight: FontWeight.bold),
+        );
+      case 2:
+        return Text(
+          '좋음',
+          style: TextStyle(color: Colors.indigo, fontWeight: FontWeight.bold),
+        );
+      case 3:
+        return Text(
+          '보통',
+          style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
+        );
+      case 4:
+        return Text(
+          '나쁨',
+          style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
+        );
+      case 5:
+        return Text(
+          '매우나쁨',
+          style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
+        );
+      default:
+        print("NA!!!!!!!!!");
     }
   }
 }
