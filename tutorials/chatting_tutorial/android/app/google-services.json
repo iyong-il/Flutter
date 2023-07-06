@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:338091236827:android:e6303e17dcc480e2629bfe",
+        "mobilesdk_app_id": "1:338091236827:android:3a959b6ef0c6355c629bfe",
         "android_client_info": {
           "package_name": "com.example.chatting_tutorial"
         }
@@ -29,6 +29,13 @@
             {
               "client_id": "338091236827-ne445ik0ni7jo64jo6n5g60ov4gcue6e.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "338091236827-ct4brdhg7q1b3m6gcr4uura3losf4sjr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.chattingTutorial"
+              }
             }
           ]
         }
