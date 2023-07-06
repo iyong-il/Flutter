@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "338091236827",
+    "project_id": "chatting-tutorial-f2e21",
+    "storage_bucket": "chatting-tutorial-f2e21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338091236827:android:e6303e17dcc480e2629bfe",
+        "android_client_info": {
+          "package_name": "com.example.chatting_tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338091236827-ne445ik0ni7jo64jo6n5g60ov4gcue6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUfYhSCPb7CzGwYtle1PhYTHoICuzHavo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338091236827-ne445ik0ni7jo64jo6n5g60ov4gcue6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
