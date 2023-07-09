@@ -52,16 +52,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget buildRecipeCard(Recipe recipe) {
     return Card(
-      elevation: 0.0,
-      child: Column(
-        children: [
-          // Image.asset(이미지 경로 == recipe.imageUrl)
-          Text(recipe.imageUrl ?? ""),
-          const SizedBox(
-            height: 10.0,
-          ),
-          Text(recipe.label ?? "")
-        ],
+      elevation: 2.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          children: [
+            // Image.asset(이미지 경로 == recipe.imageUrl)
+            Text(recipe.imageUrl ?? ""),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Text(recipe.label ?? "")
+          ],
+        ),
       ),
     );
   }
