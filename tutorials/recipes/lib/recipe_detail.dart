@@ -25,6 +25,8 @@ class _RecipeDetailState extends State<RecipeDetail> {
     print('Recipe_Detial / didChange - called');
   }
 
+  double multiplier = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,23 @@ class _RecipeDetailState extends State<RecipeDetail> {
         backgroundColor: Colors.cyanAccent[400],
       ),
       body: SafeArea(
-        child: recipeDetail(widget.recipe),
+        child: recipeDetail(
+            widget.recipe,
+            Slider(
+              value: multiplier,
+              label:
+                  '${((widget.recipe.serving ?? 0) * (multiplier)).toInt()}인분',
+              min: 1.0,
+              max: 10.0,
+              divisions: 9,
+              onChanged: (value) {
+                setState(() {
+                  multiplier = value;
+                  print('multiplier - $multiplier');
+                });
+              },
+            ),
+            multiplier),
       ),
     );
   }
@@ -46,10 +64,7 @@ class _RecipeDetailState extends State<RecipeDetail> {
   }
 }
 
-Widget recipeDetail(Recipe recipe) {
-
-  double? multiplier;
-
+Widget recipeDetail(Recipe recipe, Widget widget, double multiplier) {
   return Center(
     child: Column(
       // mainAxisAlignment: MainAxisAlignment.center,
@@ -73,32 +88,22 @@ Widget recipeDetail(Recipe recipe) {
         // 리스트뷰는 사이즈가 정해져 있어야 하기 때문에 페이지의 일부에서 사용할 경우 Expanded로 감싸줘야 한다.
         Expanded(
           child: ListView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              itemCount: recipe.ingredients?.length ?? 0,
-              itemBuilder: (BuildContext context, int index) {
-                final ingredient = recipe.ingredients?[index];
-                return Column(
-                  children: [
-                    Text(
-                      "${ingredient?.quantity ?? ''} ${ingredient?.measure ?? ''} ${ingredient?.name ?? ''}",
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                );
-              }),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            itemCount: recipe.ingredients?.length ?? 0,
+            itemBuilder: (BuildContext context, int index) {
+              final ingredient = recipe.ingredients?[index];
+              return Column(
+                children: [
+                  Text(
+                    "${(ingredient?.quantity ?? 0) * multiplier} ${ingredient?.measure ?? ''} ${ingredient?.name ?? ''}",
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              );
+            },
+          ),
         ),
-        Slider(
-          min: 1,
-          max: 10,
-          value: multiplier ?? 1,
-          activeColor: Colors.red,
-          label: '${((multiplier ?? 1).toInt()).toString()} 인분',
-          divisions: 10,
-          onChanged: (value) {
-            multiplier = value;
-            print('${((multiplier ?? 1).toInt()).toString()} 인분');
-          },
-        )
+        widget
       ],
     ),
   );
