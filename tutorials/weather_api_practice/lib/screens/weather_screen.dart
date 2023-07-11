@@ -28,36 +28,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
   double? dust2;
   var date = DateTime.now();
 
-
   // 라이프사이클
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     updateData(widget.parseWeatherData, widget.parseAirData);
-  }
-
-  // 메서드
-  void updateData(dynamic weatherData, dynamic airData) {
-    cityName = weatherData['timezone'];
-    double temp = weatherData['current']['temp'];
-    int condition = weatherData['current']['weather'][0]['id'];
-    description = weatherData['current']['weather'][0]['description'];
-    weatherIcon = model.getWeatherIcon(condition);
-
-    int index = airData['list'][0]['main']['aqi'];
-    airIcon = model.getAirIcon(index);
-    airCondition = model.getAirCondition(index);
-    dust1 = airData['list'][0]['components']['pm10'];
-    dust2 = airData['list'][0]['components']['pm2_5'];
-
-    temperature = temp.toInt();
-  }
-
-  String getSystemTime() {
-    var now = DateTime.now();
-
-    return DateFormat('h:mm a').format(now);
   }
 
   @override
@@ -100,6 +76,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // 상단 지역 / 시간
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -141,6 +118,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             )
                           ],
                         ),
+                        // 온도
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -172,6 +150,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       ],
                     ),
                   ),
+                  // 하단 미세먼지 정보
                   Column(
                     children: [
                       Divider(
@@ -264,5 +243,28 @@ class _WeatherScreenState extends State<WeatherScreen> {
         ),
       ),
     );
+  }
+
+  // 메서드
+  void updateData(dynamic weatherData, dynamic airData) {
+    cityName = weatherData['timezone'];
+    double temp = weatherData['current']['temp'];
+    int condition = weatherData['current']['weather'][0]['id'];
+    description = weatherData['current']['weather'][0]['description'];
+    weatherIcon = model.getWeatherIcon(condition);
+
+    int index = airData['list'][0]['main']['aqi'];
+    airIcon = model.getAirIcon(index);
+    airCondition = model.getAirCondition(index);
+    dust1 = airData['list'][0]['components']['pm10'];
+    dust2 = airData['list'][0]['components']['pm2_5'];
+
+    temperature = temp.toInt();
+  }
+
+  String getSystemTime() {
+    var now = DateTime.now();
+
+    return DateFormat('h:mm a').format(now);
   }
 }

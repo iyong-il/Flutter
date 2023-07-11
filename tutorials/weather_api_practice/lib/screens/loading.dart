@@ -5,7 +5,6 @@ import 'package:weather_api_practice/screens/weather_screen.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-
 // 내 apikey가 아직 활성화가 되지 않아 코딩셰프님의 키를 받아서 사용
 const apikey = '0d0cc1131b44cd6ea0027e60e69dc007';
 
@@ -17,6 +16,26 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
+  // 라이프 사이클
+  @override
+  void initState() {
+    super.initState();
+    getLocation();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.amber,
+      body: Center(
+        // child: LoadingIndicator(indicatorType: Indicator.ballBeat),
+        child: SpinKitDoubleBounce(
+          color: Colors.white,
+          size: 80.0,
+        ),
+      ),
+    );
+  }
 
   // 메서드
   void getLocation() async {
@@ -49,27 +68,5 @@ class _LoadingState extends State<Loading> {
                   parseWeatherData: weatherData,
                   parseAirData: airData,
                 )));
-  }
-
-  // 라이프 사이클
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    getLocation();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.amber,
-      body: Center(
-        // child: LoadingIndicator(indicatorType: Indicator.ballBeat),
-        child: SpinKitDoubleBounce(
-          color: Colors.white,
-          size: 80.0,
-        )
-      ),
-    );
   }
 }
