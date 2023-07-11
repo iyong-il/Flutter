@@ -96,7 +96,7 @@ Widget recipeDetail(Recipe recipe) {
           divisions: 10,
           onChanged: (value) {
             multiplier = value;
-            print('${((multiplier ?? 1).toInt()).toString()}인분');
+            print('${((multiplier ?? 1).toInt()).toString()} 인분');
           },
         )
       ],
