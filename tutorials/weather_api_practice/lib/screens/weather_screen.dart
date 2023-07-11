@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timer_builder/timer_builder.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_api_practice/model/model.dart';
+import '../ui_components/widget.dart';
 
 class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key, this.parseWeatherData, this.parseAirData});
@@ -104,16 +105,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                     );
                                   },
                                 ),
-                                Text(
-                                  DateFormat(' - EEEE, ').format(date),
-                                  style: GoogleFonts.lato(
-                                      fontSize: 16.0, color: Colors.white),
-                                ),
-                                Text(
-                                  DateFormat('d MMM, yy').format(date),
-                                  style: GoogleFonts.lato(
-                                      fontSize: 16.0, color: Colors.white),
-                                )
+                                // 날짜 - 요일
+                                getDateText(' - EEEE, ', date),
+                                // 날짜 - 일, 월, 년도
+                                getDateText('d MMM, yy', date)
                               ],
                             )
                           ],
@@ -161,77 +156,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Column(
-                            children: [
-                              Text(
-                                'AQI(대기질 지수)',
-                                style: GoogleFonts.lato(
-                                    fontSize: 14.0, color: Colors.white),
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              airIcon!,
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              airCondition!
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                '미세먼지',
-                                style: GoogleFonts.lato(
-                                    fontSize: 14.0, color: Colors.white),
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              Text(
-                                '$dust1',
-                                style: GoogleFonts.lato(
-                                    fontSize: 24.0, color: Colors.white),
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              Text(
-                                '㎍/m³',
-                                style: GoogleFonts.lato(
-                                    fontSize: 14.0,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                '초미세먼지',
-                                style: GoogleFonts.lato(
-                                    fontSize: 14.0, color: Colors.white),
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              Text(
-                                '$dust2',
-                                style: GoogleFonts.lato(
-                                    fontSize: 24.0, color: Colors.white),
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              Text(
-                                '㎍/m³',
-                                style: GoogleFonts.lato(
-                                    fontSize: 14.0,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              )
-                            ],
-                          ),
+                          // AQI 대기질 지수
+                          getAirPollutionInfo('AQI(대기질 지수)', null, airIcon ?? null, airCondition ?? null),
+                          // 미세먼지
+                          getAirPollutionInfo('미세먼지', dust1 ?? null, null, null),
+                          // 초미세먼지
+                          getAirPollutionInfo('초미세먼지', dust2 ?? null, null, null),
                         ],
                       )
                     ],
