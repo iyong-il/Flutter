@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'card1.dart';
+import 'card2.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,10 +14,8 @@ class _HomeState extends State<Home> {
   int selectedIndex = 0;
 
   static List<Widget> pages = [
-    Card1(),
-    Container(
-      color: Colors.greenAccent,
-    ),
+    const Card1(),
+    const Card2(),
     Container(
       color: Colors.blueAccent,
     )
@@ -42,6 +41,7 @@ class _HomeState extends State<Home> {
       // TODO: Style the body text
       body: pages[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        unselectedFontSize: 14.0,
           onTap: (int index) {
             _onItemClicked(index);
             print(index);
