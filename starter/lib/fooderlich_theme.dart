@@ -63,6 +63,8 @@ class FooderlichTheme {
   // 3
   static ThemeData light() {
     return ThemeData(
+      chipTheme: ChipThemeData(
+          backgroundColor: Colors.grey[800], deleteIconColor: Colors.white),
       brightness: Brightness.light,
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith(

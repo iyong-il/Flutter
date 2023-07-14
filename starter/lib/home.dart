@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'card1.dart';
 import 'card2.dart';
+import 'card3.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -16,9 +17,7 @@ class _HomeState extends State<Home> {
   static List<Widget> pages = [
     const Card1(),
     const Card2(),
-    Container(
-      color: Colors.blueAccent,
-    )
+    const Card3()
   ];
 
   void _onItemClicked(int index) {
@@ -50,7 +49,7 @@ class _HomeState extends State<Home> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.card_giftcard),
-              label: 'Card',
+              label: 'Card1',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.card_giftcard),
