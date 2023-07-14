@@ -10,30 +10,44 @@ class Card2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-          padding: const EdgeInsets.all(16.0),
-          constraints: const BoxConstraints.expand(width: 350, height: 450),
-          decoration: BoxDecoration(
-              image: const DecorationImage(
-                image: AssetImage('assets/mag5.png'),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.circular(16.0)),
-          child: const Column(
-            children: [
-              // 상단
-               AuthorCard(
-                  authorName: 'Kaa',
-                  title: 'sdadsas',
-                  imageProvider: AssetImage('assets/author_katz.jpeg')),
-              //하단
-              Row(
+        padding: const EdgeInsets.all(16.0),
+        constraints: const BoxConstraints.expand(width: 350, height: 450),
+        decoration: BoxDecoration(
+            image: const DecorationImage(
+              image: AssetImage('assets/mag5.png'),
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadius.circular(16.0)),
+        child: Column(
+          children: [
+            // 상단
+            const AuthorCard(
+                authorName: 'Mike Katz',
+                title: 'Smoothie Connoisseur',
+                imageProvider: AssetImage('assets/author_katz.jpeg')),
+            //하단
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text('First'),
-                  Text('Second'),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 32.0),
+                    child: RotatedBox(
+                      quarterTurns: 3,
+                      child: Text(
+                        'Smoothie',
+                        style: Theme.of(context).textTheme.headline1,
+                      ),
+                    ),
+                  ),
+                  Text('Recipe', style: Theme.of(context).textTheme.headline1),
                 ],
-              )
-            ],
-          )),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
