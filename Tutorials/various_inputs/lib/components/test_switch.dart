@@ -23,19 +23,53 @@ class _TestSwitchState extends State<TestSwitch> {
     return Column(
       children: [
         Switch(
-            value: value,
-            onChanged: (bool newValue) {
-              setState(() {
+          value: value,
+          onChanged: (bool newValue) {
+            setState(
+              () {
                 value = newValue;
-              });
-            }),
+                if (!value) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        'value - ${newValue}',
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      showCloseIcon: true,
+                      duration: Duration(milliseconds: 1500),
+                      backgroundColor: Colors.purple,
+                    ),
+                  );
+                }
+              },
+            );
+          },
+        ),
         CupertinoSwitch(
-            value: value,
-            onChanged: (bool newValue) {
-              setState(() {
+          value: value,
+          onChanged: (bool newValue) {
+            setState(
+              () {
                 value = newValue;
-              });
-            })
+                if (value) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        'value - ${newValue}',
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      showCloseIcon: true,
+                      duration: Duration(milliseconds: 500),
+                      backgroundColor: Colors.orange,
+                    ),
+                  );
+                }
+              },
+            );
+          },
+        )
       ],
     );
   }

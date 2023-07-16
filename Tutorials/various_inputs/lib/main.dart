@@ -29,7 +29,7 @@ class Body extends StatelessWidget {
           TestRadioButton(),
           TestSlider(),
           TestSwitch(),
-          TestPopUpMenu()
+          TestPopUpMenu(),
         ],
       ),
     );

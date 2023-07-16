@@ -30,10 +30,34 @@ class _TestRadioButtonState extends State<TestRadioButton> {
             });
           },
         ),
-        Radio<TestValue>(
-            value: TestValue.test2,
-            groupValue: selectValue,
-            onChanged: (value) => setState(() => selectValue = value!)),
+        GestureDetector(
+          child: Container(
+            padding: EdgeInsets.only(left: 16),
+            height: 60,
+            width: double.infinity,
+            color: Colors.grey,
+            child: Row(
+              children: [
+                Radio<TestValue>(
+                  value: TestValue.test2,
+                  groupValue: selectValue,
+                  onChanged: (value) => setState(() => selectValue = value!),
+                ),
+                const SizedBox(
+                  width: 18,
+                ),
+                Text(TestValue.test2.name, style: TextStyle(fontSize: 16.0),)
+              ],
+            ),
+          ),
+          onTap: () {
+            setState(() {
+              if (selectValue != TestValue.test2) {
+                selectValue = TestValue.test2;
+              }
+            });
+          },
+        ),
         Radio<TestValue>(
             value: TestValue.test3,
             groupValue: selectValue,
