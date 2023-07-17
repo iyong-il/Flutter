@@ -3,7 +3,9 @@ import '../components/components.dart';
 import '../models/models.dart';
 
 class TodayRecipeListView extends StatelessWidget {
-  const TodayRecipeListView({super.key});
+  const TodayRecipeListView({super.key, required this.recipes});
+
+  final List<ExploreRecipe> recipes;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class TodayRecipeListView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Recipes of the Day',
+            'Recipes of the Day 👨‍🍳',
             style: Theme.of(context).textTheme.headline1,
           ),
           const SizedBox(
@@ -24,16 +26,31 @@ class TodayRecipeListView extends StatelessWidget {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: (BuildContext context, int index) {
-                return Text('item number - $index');
+                return _buildCard(recipes[index]);
               },
               separatorBuilder: (BuildContext context, int index) {
-                return Container(color: Colors.red, height: 5.0, width: 5.0,);
+                return const SizedBox(
+                  width: 16.0,
+                );
               },
-              itemCount: 7,
+              itemCount: recipes.length,
             ),
           )
         ],
       ),
     );
+  }
+
+  Widget _buildCard(ExploreRecipe exploreRecipe) {
+    switch (exploreRecipe.cardType) {
+      case RecipeCardType.card1:
+        return Card1(recipe: exploreRecipe);
+      case RecipeCardType.card2:
+        return Card2(recipe: exploreRecipe);
+      case RecipeCardType.card3:
+        return Card3(recipe: exploreRecipe);
+      default:
+        throw Exception('This card does not exist!');
+    }
   }
 }
