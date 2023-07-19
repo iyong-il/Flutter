@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'components.dart';
+import '../models/models.dart';
 
 class FriendPostListView extends StatelessWidget {
-  const FriendPostListView({super.key});
+  const FriendPostListView({super.key, required this.friendsPost});
+
+  final List<Post> friendsPost;
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +27,19 @@ class FriendPostListView extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (BuildContext buildContext, int index) {
-                return FriendPostTile();
-              },
-              separatorBuilder: (buildContext, index) {
-                return const SizedBox(
-                  height: 16.0,
+                return FriendPostTile(
+                  posts: friendsPost[index],
                 );
               },
-              itemCount: 10)
+              separatorBuilder: (buildContext, index) {
+                return Container(
+                  margin: const EdgeInsets.symmetric(vertical: 8.0),
+                  height: 1.0,
+                  width: double.infinity,
+                  color: Colors.grey.withOpacity(0.4),
+                );
+              },
+              itemCount: friendsPost.length)
         ],
       ),
     );
