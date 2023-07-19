@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screen/explore_screen.dart';
+import 'screen/recipe_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -15,7 +16,7 @@ class HomeState extends State<Home> {
     // TODO: Replace with ExploreScreen
     ExploreScreen(),
     // TODO: Replace with RecipesScreen
-    Container(color: Colors.green),
+    RecipeScreen(),
     Container(color: Colors.blue),
   ];
 
@@ -29,6 +30,7 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 1,
         centerTitle: true,
         title: Text(
           'Fooderlich',
