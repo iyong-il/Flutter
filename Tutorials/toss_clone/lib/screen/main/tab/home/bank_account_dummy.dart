@@ -13,6 +13,11 @@ final bankAccountToss =
 final List<BankAccount> bankAccounts = [
   bankAccountShinhan1,
   bankAccountShinhan2,
+  bankAccountShinhan2,
+  bankAccountShinhan2,
+  bankAccountShinhan2,
+  bankAccountShinhan2,
+  bankAccountShinhan2,
   bankAccountShinhan3,
   bankAccountKakao,
   bankAccountToss

@@ -1,4 +1,5 @@
 import 'package:fast_app_base/common/widget/w_rounded_container.dart';
+import 'package:fast_app_base/screen/main/s_main.dart';
 import 'package:fast_app_base/screen/main/tab/home/bank_account_dummy.dart';
 
 import '../../../../common/common.dart';
@@ -22,29 +23,36 @@ class HomeFragment extends StatelessWidget {
       color: Colors.black,
       child: Stack(
         children: [
-          SingleChildScrollView(
-            padding: EdgeInsets.only(top: 60),
-            child: Column(
-              children: [
-                BigButton(
-                  '토스뱅크',
-                  onTap: () {
-                    context.showSnackbar('토스뱅크를 눌렀어요');
-                  },
-                ),
-                height10,
-                RoundedContainer(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      '자산'.text.bold.white.make(),
-                      height5,
-                      ...bankAccounts.map((e) => BankAccountWidget(e)).toList()
-                    ],
+          RefreshIndicator(
+            edgeOffset: TossAppBar.appbarHeight,
+            onRefresh: () async {
+              await sleepAsync(500.ms);
+            },
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.only(top: TossAppBar.appbarHeight, bottom: MainScreenState.bottomNavigationHeight),
+              child: Column(
+                children: [
+                  BigButton(
+                    '토스뱅크',
+                    onTap: () {
+                      context.showSnackbar('토스뱅크를 눌렀어요');
+                    },
                   ),
-                )
-              ],
-            ).pSymmetric(v: 20),
+                  height10,
+                  RoundedContainer(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        '자산'.text.bold.white.size(20).make(),
+                        height5,
+                        ...bankAccounts.map((e) => BankAccountWidget(e)).toList()
+                      ],
+                    ),
+                  )
+                ],
+              ).pSymmetric(v: 20),
+            ),
+
           ),
           const TossAppBar()
         ],
