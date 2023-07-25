@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/sqflite/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/sqflite/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/sqflite/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/path_provider_foundation/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/path_provider_foundation/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/path_provider_foundation/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/keyboard_utils_fork/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/keyboard_utils_fork/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/keyboard_utils_fork/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/sqflite/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/sqflite/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/sqflite/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/sqflite/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/sqflite/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/sqflite/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/flutter_native_splash/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/flutter_native_splash/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/flutter_native_splash/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/flutter_native_splash/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/flutter_native_splash/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/flutter_native_splash/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/sqflite/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/sqflite/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/sqflite/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/path_provider_foundation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/path_provider_foundation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/path_provider_foundation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/shared_preferences_foundation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/shared_preferences_foundation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/shared_preferences_foundation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/isar_flutter_libs/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/isar_flutter_libs/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/isar_flutter_libs/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/keyboard_utils_fork/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/keyboard_utils_fork/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/keyboard_utils_fork/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/isar_flutter_libs/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/isar_flutter_libs/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/isar_flutter_libs/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/shared_preferences_foundation/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/shared_preferences_foundation/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/ios/.symlinks/plugins/shared_preferences_foundation/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/toss_clone/macos/Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/example/.pub" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
