@@ -12,8 +12,8 @@ class UserInput extends StatelessWidget {
 
   final bool result;
 
-  final Function(RPSType) onTap;
-  final RPSType? rpsType;
+  final Function(InputType) onTap;
+  final InputType? rpsType;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class UserInput extends StatelessWidget {
   }
 
   List<Widget> _getInputs() {
-    return RPSType.values
+    return InputType.values
         .map(
           (e) => InputCard(
             rpsType: e,

@@ -13,11 +13,19 @@ class RPSApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('가위 바위 보'),
+          backgroundColor: Colors.deepPurple,
+          title: const Text(
+            '가위 바위 보',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
         ),
-        body: GameBody(),
+        body: const GameBody(),
       ),
     );
   }

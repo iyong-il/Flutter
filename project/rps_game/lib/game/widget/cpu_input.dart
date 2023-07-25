@@ -6,7 +6,7 @@ class CpuInput extends StatelessWidget {
   const CpuInput({super.key, required this.result, required this.cpuType});
 
   final bool result;
-  final RPSType cpuType;
+  final InputType cpuType;
 
   @override
   Widget build(BuildContext context) {

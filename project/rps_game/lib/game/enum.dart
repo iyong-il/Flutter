@@ -1,6 +1,6 @@
 const basePath = 'assets/images';
 
-enum RPSType {
+enum InputType {
   rock,
   paper,
   scissors;

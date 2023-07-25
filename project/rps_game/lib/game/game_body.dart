@@ -16,13 +16,13 @@ class GameBody extends StatefulWidget {
 
 class _GameBodyState extends State<GameBody> {
   late bool isDone;
-  RPSType? _rpsType;
-  late RPSType _cpuType;
+  InputType? _rpsType;
+  late InputType _cpuType;
 
   @override
   void initState() {
     isDone = false;
-    setCpuType();
+    _setCpuType();
     super.initState();
   }
 
@@ -30,12 +30,16 @@ class _GameBodyState extends State<GameBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(child: CpuInput(result: isDone, cpuType: _cpuType)),
+        Expanded(
+            child: CpuInput(
+          result: isDone,
+          cpuType: _cpuType,
+        )),
         Expanded(
             child: GameResult(
           result: isDone,
-          resultType: getResult(),
-          onTap: reset,
+          resultType: _getResult(),
+          onTap: _reset,
         )),
         Expanded(
             child: UserInput(
@@ -47,47 +51,47 @@ class _GameBodyState extends State<GameBody> {
     );
   }
 
-  void _setUserInput(RPSType userInput) {
+  void _setUserInput(InputType userInput) {
     setState(() {
       isDone = true;
       _rpsType = userInput;
     });
   }
 
-  void setCpuType() {
+  void _setCpuType() {
     final random = Random();
-    _cpuType = RPSType.values[random.nextInt(3)];
+    _cpuType = InputType.values[random.nextInt(3)];
   }
 
-  GameResultType? getResult() {
+  GameResultType? _getResult() {
     if (_rpsType == null) return null;
 
     switch (_rpsType) {
-      case RPSType.rock:
+      case InputType.rock:
         switch (_cpuType) {
-          case RPSType.rock:
+          case InputType.rock:
             return GameResultType.draw;
-          case RPSType.paper:
+          case InputType.paper:
             return GameResultType.cpuWin;
-          case RPSType.scissors:
+          case InputType.scissors:
             return GameResultType.playerWin;
         }
-      case RPSType.paper:
+      case InputType.paper:
         switch (_cpuType) {
-          case RPSType.rock:
+          case InputType.rock:
             return GameResultType.playerWin;
-          case RPSType.paper:
+          case InputType.paper:
             return GameResultType.draw;
-          case RPSType.scissors:
+          case InputType.scissors:
             return GameResultType.cpuWin;
         }
-      case RPSType.scissors:
+      case InputType.scissors:
         switch (_cpuType) {
-          case RPSType.rock:
+          case InputType.rock:
             return GameResultType.cpuWin;
-          case RPSType.paper:
+          case InputType.paper:
             return GameResultType.playerWin;
-          case RPSType.scissors:
+          case InputType.scissors:
             return GameResultType.draw;
         }
       default:
@@ -95,10 +99,10 @@ class _GameBodyState extends State<GameBody> {
     }
   }
 
-  void reset() {
+  void _reset() {
     setState(() {
       isDone = false;
-      setCpuType();
+      _setCpuType();
     });
   }
 }
