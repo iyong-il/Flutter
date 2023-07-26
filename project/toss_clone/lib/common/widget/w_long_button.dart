@@ -5,10 +5,18 @@ import 'package:flutter/material.dart';
 import 'w_arrow.dart';
 
 class LongButton extends StatelessWidget {
-  const LongButton({super.key, required this.title, required this.onTap});
+  const LongButton({
+    super.key,
+    this.icon,
+    required this.title,
+    this.isArrow = true,
+    required this.onTap,
+  });
 
+  final Icon? icon;
   final String title;
   final VoidCallback onTap;
+  final bool isArrow;
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +24,14 @@ class LongButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 15),
       child: Row(
         children: [
+          if (icon != null) icon!,
+          if (icon != null) width10,
           title.text.make(),
           emptyExpanded,
-          Arrow(
-            color: context.appColors.lessImportantText,
-          )
+          if (isArrow)
+            Arrow(
+              color: context.appColors.lessImportantText,
+            )
         ],
       ),
     );

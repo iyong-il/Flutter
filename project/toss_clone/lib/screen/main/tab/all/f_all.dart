@@ -1,4 +1,12 @@
+import 'package:fast_app_base/common/common.dart';
+import 'package:fast_app_base/common/widget/w_big_button.dart';
+import 'package:fast_app_base/common/widget/w_empty_expanded.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../common/widget/w_image_button.dart';
+import '../../../../common/widget/w_long_button.dart';
+import '../stock/search/s_search_stock.dart';
+import '../stock/setting/s_setting.dart';
 
 class AllFragment extends StatefulWidget {
   const AllFragment({super.key});
@@ -10,6 +18,102 @@ class AllFragment extends StatefulWidget {
 class _AllFragmentState extends State<AllFragment> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          backgroundColor: context.appColors.roundedLayoutBackgorund,
+          pinned: true,
+          actions: [
+            ImageButton(
+              onTap: () {
+                Nav.push(SearchStockScreen());
+              },
+              imagePath: '$basePath/icon/stock_search.png',
+            ),
+            ImageButton(
+              onTap: () {
+                Nav.push(SettingScreen());
+              },
+              imagePath: '$basePath/icon/stock_settings.png',
+            ),
+          ],
+        ),
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              title,
+              height20,
+              top,
+              LongButton(
+                icon: Icon(Icons.add),
+                title: '보안과 인증',
+                onTap: () {},
+              ),
+              LongButton(
+                icon: Icon(Icons.add),
+                title: '내 신용점수',
+                onTap: () {},
+              ),
+              LongButton(
+                icon: Icon(Icons.add),
+                title: '진행중인 이벤트',
+                onTap: () {},
+              ),
+              Line(),
+              LongButton(
+                icon: Icon(Icons.add),
+                title: '토스프라임',
+                isArrow: false,
+                onTap: () {},
+              ),
+              LongButton(
+                icon: Icon(Icons.add),
+                title: '토스증권 주식 모으기',
+                isArrow: false,
+                onTap: () {},
+              ),
+              LongButton(
+                icon: Icon(Icons.add),
+                title: '자동이체',
+                isArrow: false,
+                onTap: () {},
+              ),
+            ],
+          ).pSymmetric(h: 20),
+        )
+      ],
+    );
   }
+
+  Widget get title => Container(
+        child: '토스증권'.text.size(24).bold.make(),
+      );
+
+  get top => Container(
+        child: Row(
+          children: [
+            Expanded(
+              child: Container(
+                height: 60,
+                color: Colors.green,
+              ),
+            ),
+            width10,
+            Expanded(
+              child: Container(
+                height: 60,
+                color: Colors.green,
+              ),
+            ),
+            width10,
+            Expanded(
+              child: Container(
+                height: 60,
+                color: Colors.green,
+              ),
+            ),
+          ],
+        ),
+      );
 }
