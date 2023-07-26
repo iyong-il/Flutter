@@ -1,5 +1,4 @@
 import 'package:fast_app_base/common/util/local_json.dart';
-import 'package:fast_app_base/screen/main/tab/stock/vo_stock.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

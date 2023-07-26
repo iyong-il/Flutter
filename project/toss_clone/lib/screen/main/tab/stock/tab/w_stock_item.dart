@@ -15,15 +15,25 @@ class StockItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         children: [
-          Image.asset(stock.stockImagePath, width: 50,),
+          Image.asset(
+            stock.stockImagePath,
+            width: 50,
+          ),
           width20,
-          Expanded(child: stock.stockName.text.size(18).bold.make(),),
+          Expanded(
+            child: stock.stockName.text.size(18).bold.make(),
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
-           children: [
-             stock.todayPercentageString.text.color(stock.getPriceColor(context)).make(),
-             '${stock.currentPrice}원'.text.color(context.appColors.lessImportantText).make()
-           ],
+            children: [
+              stock.todayPercentageString.text
+                  .color(stock.getPriceColor(context))
+                  .make(),
+              '${stock.currentPrice}원'
+                  .text
+                  .color(context.appColors.lessImportantText)
+                  .make()
+            ],
           )
         ],
       ),

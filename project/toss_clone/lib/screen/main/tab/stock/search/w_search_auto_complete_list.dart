@@ -13,6 +13,7 @@ class SearchAutoCompleteList extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: searchData.autoCompleteList.length,
       itemBuilder: (context, index) {
         final stock = searchData.autoCompleteList[index];
         final stockName = stock.stockName;
@@ -24,10 +25,9 @@ class SearchAutoCompleteList extends StatelessWidget
               StockDetailScreen(stockName: stockName),
             );
           },
-          child: (stockName).text.make().p(20),
+          child: stockName.text.make().p(20),
         );
       },
-      itemCount: searchData.autoCompleteList.length,
     );
   }
 }
