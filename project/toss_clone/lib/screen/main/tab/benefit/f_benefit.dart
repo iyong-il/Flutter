@@ -15,20 +15,22 @@ class BenefitFragment extends StatefulWidget {
 class _BenefitFragmentState extends State<BenefitFragment> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.only(bottom: MainScreenState.bottomNavigationHeight),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          height10,
-          '혜택'.text.white.bold.size(18).make(),
-          height30,
-          const PointButton(point: 5550),
-          height20,
-          '혜택 더 받기'.text.white.bold.size(16).make(),
-          ...benefitList.map((e) => BenefitItem(e)).toList()
-        ],
-      ).pSymmetric(h: 20),
+    return Container(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.only(bottom: MainScreenState.bottomNavigationHeight),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            height10,
+            '혜택'.text.white.bold.size(18).make(),
+            height30,
+            const PointButton(point: 5550),
+            height20,
+            '혜택 더 받기'.text.white.bold.size(16).make(),
+            ...benefitList.map((e) => BenefitItem(e)).toList()
+          ],
+        ).pSymmetric(h: 20),
+      ),
     );
   }
 }

@@ -22,7 +22,12 @@ class PopularSearchStockList extends StatelessWidget {
           ],
         ),
         height20,
-        ...popularStockList.mapIndexed((e, index) => PopularStockItem(stock: e, index: index + 1, )).toList()
+        ...popularStockList
+            .mapIndexed((e, index) => PopularStockItem(
+                  stock: e,
+                  index: index + 1,
+                ))
+            .toList()
       ],
     ).pSymmetric(h: 20);
   }

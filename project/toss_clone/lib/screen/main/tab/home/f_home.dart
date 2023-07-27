@@ -1,6 +1,8 @@
 import 'package:fast_app_base/common/widget/w_rounded_container.dart';
 import 'package:fast_app_base/screen/main/s_main.dart';
 import 'package:fast_app_base/screen/main/tab/home/bank_account_dummy.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:live_background/widget/live_background_widget.dart';
 
 import '../../../../common/common.dart';
 import 'package:fast_app_base/screen/dialog/d_message.dart';
@@ -23,10 +25,11 @@ class HomeFragment extends StatelessWidget {
       color: Colors.black,
       child: Stack(
         children: [
+          LiveBackgroundWidget(),
           RefreshIndicator(
             edgeOffset: TossAppBar.appbarHeight,
             onRefresh: () async {
-              await sleepAsync(500.ms);
+              await sleepAsync(500.milliseconds);
             },
             child: SingleChildScrollView(
               padding: const EdgeInsets.only(top: TossAppBar.appbarHeight, bottom: MainScreenState.bottomNavigationHeight),
@@ -50,7 +53,7 @@ class HomeFragment extends StatelessWidget {
                     ),
                   )
                 ],
-              ).pSymmetric(v: 20),
+              ).pSymmetric(v: 20).animate().slideY(duration: 3000.milliseconds).fadeIn(),
             ),
 
           ),
