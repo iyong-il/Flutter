@@ -6,12 +6,13 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.blue,
-            elevation: 0.0,
-            title: const Text('다양한 Flutter의 입력 알아보기'),
-          ),
-          body: const Body()),
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          elevation: 0.0,
+          title: const Text('다양한 Flutter의 입력 알아보기'),
+        ),
+        body: const Body(),
+      ),
     ),
   );
 }
@@ -21,17 +22,28 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+   final Widget height10 = _getHeight(10);
+    return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Column(
         children: [
-          TestCheckBox(),
-          TestRadioButton(),
-          TestSlider(),
-          TestSwitch(),
-          TestPopUpMenu(),
+          const TestCheckBox(),
+          height10,
+          const TestRadioButton(),
+          height10,
+          const TestSlider(),
+          height10,
+          const TestSwitch(),
+          height10,
+          const TestPopUpMenu(),
         ],
       ),
     );
   }
+}
+
+Widget _getHeight(double height) {
+  return SizedBox(
+    height: height,
+  );
 }

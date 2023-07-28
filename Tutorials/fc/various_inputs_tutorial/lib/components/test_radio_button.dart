@@ -16,26 +16,23 @@ class _TestRadioButtonState extends State<TestRadioButton> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          leading: Radio<TestValue>(
-              value: TestValue.test1,
-              groupValue: selectValue,
-              onChanged: (value) => setState(() => selectValue = value!)),
-          title: Text(TestValue.test1.name),
-          onTap: () {
-            setState(() {
-              if (selectValue != TestValue.test1) {
-                selectValue = TestValue.test1;
-              }
-            });
-          },
+        Container(
+          color: Colors.red.shade300,
+          child: ListTile(
+            leading: Radio<TestValue>(
+                value: TestValue.test1,
+                groupValue: selectValue,
+                onChanged: (value) => setState(() => selectValue = value!)),
+            title: Text(TestValue.test1.name),
+            onTap: () => setState(() => selectValue = TestValue.test1),
+          ),
         ),
         GestureDetector(
           child: Container(
-            padding: EdgeInsets.only(left: 16),
+            padding: const EdgeInsets.only(left: 16),
             height: 60,
             width: double.infinity,
-            color: Colors.grey,
+            color: Colors.green.shade300,
             child: Row(
               children: [
                 Radio<TestValue>(
@@ -46,22 +43,38 @@ class _TestRadioButtonState extends State<TestRadioButton> {
                 const SizedBox(
                   width: 18,
                 ),
-                Text(TestValue.test2.name, style: TextStyle(fontSize: 16.0),)
+                Text(
+                  TestValue.test2.name,
+                  style: const TextStyle(fontSize: 16.0),
+                )
               ],
             ),
           ),
-          onTap: () {
-            setState(() {
-              if (selectValue != TestValue.test2) {
-                selectValue = TestValue.test2;
-              }
-            });
-          },
+          onTap: () => setState(() => selectValue = TestValue.test2),
         ),
-        Radio<TestValue>(
-            value: TestValue.test3,
-            groupValue: selectValue,
-            onChanged: (value) => setState(() => selectValue = value!))
+        Container(
+          color: Colors.blue.shade300,
+          height: 60,
+          child: Row(
+            children: [
+              const SizedBox(
+                width: 16,
+              ),
+              Radio<TestValue>(
+                value: TestValue.test3,
+                groupValue: selectValue,
+                onChanged: (value) => setState(() => selectValue = value!),
+              ),
+              const SizedBox(
+                width: 18,
+              ),
+              Text(
+                (TestValue.test3.name).toString(),
+                style: const TextStyle(fontSize: 16),
+              )
+            ],
+          ),
+        )
       ],
     );
   }

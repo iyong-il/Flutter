@@ -32,12 +32,12 @@ class _TestSwitchState extends State<TestSwitch> {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text(
-                        'value - ${newValue}',
+                        'value - $newValue',
                         style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       showCloseIcon: true,
-                      duration: Duration(milliseconds: 1500),
+                      duration: const Duration(milliseconds: 1500),
                       backgroundColor: Colors.purple,
                     ),
                   );
@@ -56,12 +56,12 @@ class _TestSwitchState extends State<TestSwitch> {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text(
-                        'value - ${newValue}',
+                        'value - $newValue',
                         style: const TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                       showCloseIcon: true,
-                      duration: Duration(milliseconds: 500),
+                      duration: const Duration(milliseconds: 500),
                       backgroundColor: Colors.orange,
                     ),
                   );

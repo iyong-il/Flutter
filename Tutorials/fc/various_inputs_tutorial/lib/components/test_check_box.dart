@@ -34,9 +34,6 @@ class _TestCheckBoxState extends State<TestCheckBox> {
     );
   }
 
-  void changeValue(int index, {bool value = false}) {
-    setState(() {
-      values[index] = value;
-    });
-  }
+  void changeValue(int index, {bool value = false}) =>
+      setState(() => values[index] = value);
 }
