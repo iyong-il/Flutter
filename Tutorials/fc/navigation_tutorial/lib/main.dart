@@ -61,7 +61,21 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('스낵바가 열렸습니다.'),
+              duration: Duration(milliseconds: 12000000),
+              elevation: 0.0,
+            ),
+          );
+        },
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+      ),
       appBar: AppBar(
         title: const Text('flutter에서 화면 이동하기'),
       ),
@@ -87,8 +101,18 @@ class _MyHomeState extends State<MyHome> {
     switch (index) {
       case 1:
         return Container(
-          height: 800,
+          height: 500,
+          width: double.infinity,
           color: Colors.green,
+          child: SingleChildScrollView(
+            child: Center(
+              child: Container(
+                width: 200,
+                height: 700,
+                color: Colors.lightBlue,
+              ),
+            ),
+          ),
         );
       case 2:
         return Container(
