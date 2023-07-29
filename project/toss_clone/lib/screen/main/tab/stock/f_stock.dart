@@ -25,7 +25,7 @@ class _StockFragmentState extends State<StockFragment>
     return CustomScrollView(
       slivers: [
         SliverAppBar(
-          backgroundColor: context.appColors.roundedLayoutBackgorund,
+          backgroundColor: context.appColors.roundedLayoutBackground,
           pinned: true,
           actions: [
             ImageButton(
@@ -64,7 +64,7 @@ class _StockFragmentState extends State<StockFragment>
   }
 
   Widget get title => Container(
-        color: context.appColors.roundedLayoutBackgorund,
+        color: context.appColors.roundedLayoutBackground,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -89,7 +89,7 @@ class _StockFragmentState extends State<StockFragment>
       );
 
   Widget get tabBar => Container(
-        color: context.appColors.roundedLayoutBackgorund,
+        color: context.appColors.roundedLayoutBackground,
         child: Column(
           children: [
             TabBar(

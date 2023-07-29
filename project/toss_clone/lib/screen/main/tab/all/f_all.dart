@@ -21,7 +21,7 @@ class _AllFragmentState extends State<AllFragment> {
     return CustomScrollView(
       slivers: [
         SliverAppBar(
-          backgroundColor: context.appColors.roundedLayoutBackgorund,
+          backgroundColor: context.appColors.roundedLayoutBackground,
           pinned: true,
           actions: [
             ImageButton(

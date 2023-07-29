@@ -50,7 +50,7 @@ class _SearchHistoryStockListState extends State<SearchHistoryStockList>
                   )
                       .box
                       .withRounded(value: 6)
-                      .color(context.appColors.roundedLayoutBackgorund)
+                      .color(context.appColors.roundedLayoutBackground)
                       .p8
                       .make(),
                 ),

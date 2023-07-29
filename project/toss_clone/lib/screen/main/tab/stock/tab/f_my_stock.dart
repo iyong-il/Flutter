@@ -23,7 +23,7 @@ class MyStockFragment extends StatelessWidget {
 
   Widget getMyAccount(BuildContext context) => Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        color: context.appColors.roundedLayoutBackgorund,
+        color: context.appColors.roundedLayoutBackground,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -56,7 +56,7 @@ class MyStockFragment extends StatelessWidget {
     children: [
       Container(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        color: context.appColors.roundedLayoutBackgorund,
+        color: context.appColors.roundedLayoutBackground,
         child: Column(
           children: [
             height30,
