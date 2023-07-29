@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
+const assetImage = 'assets/images';
+const profileImage = '$assetImage/person_crispy.png';
 
-const assetImage = 'assets/images/';
-const profileImage = '${assetImage}person_crispy.png';
-
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -21,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
@@ -37,7 +34,7 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.blue,
         title: const Text('Flutter의 Callback'),
       ),
-      body: Body(),
+      body: const Body(),
     );
   }
 }
@@ -47,7 +44,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TestWidget();
+    return const TestWidget();
   }
 }
 
@@ -59,7 +56,13 @@ class TestWidget extends StatefulWidget {
 }
 
 class _TestWidgetState extends State<TestWidget> {
-  int value = 0;
+  late int value;
+
+  @override
+  void initState() {
+    super.initState();
+    value = 0;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,53 +70,39 @@ class _TestWidgetState extends State<TestWidget> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          RandomWords(),
+          const RandomWords(),
           Text(
             'Count : $value',
             style: const TextStyle(fontSize: 30.0),
           ),
-          const SizedBox(
-            height: 20.0,
-          ),
+          const GetHeight(height: 20),
           AddButton(
             voidCallback: addCounter,
           ),
-          const SizedBox(
-            height: 16.0,
-          ),
+          const GetHeight(height: 16),
           MinusButton(
             callback: minusCounter,
           ),
-          SizedBox(
-            height: 16,
-          ),
+          const GetHeight(height: 16),
           CircleAvatar(
+            radius: 44,
             child: Image.asset(
               profileImage,
             ),
-            radius: 44,
           ),
         ],
       ),
     );
   }
 
-  void addCounter() {
-    setState(
-      () {
-        ++value;
-        print('value - $value');
-      },
-    );
-  }
+  void addCounter() => setState(
+        () => ++value,
+      );
 
   void minusCounter(int addValue) {
     if (value > 0) {
       setState(
-        () {
-          value -= addValue;
-          print('value - $value');
-        },
+        () => value -= addValue,
       );
     } else {
       return;
@@ -130,12 +119,12 @@ class AddButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.red,
           borderRadius: BorderRadius.circular(16),
         ),
-        child: Text(
+        child: const Text(
           'Up Counter',
           style: TextStyle(fontSize: 24),
         ),
@@ -154,7 +143,7 @@ class MinusButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: Colors.purple,
           borderRadius: BorderRadius.circular(16),
@@ -177,14 +166,26 @@ class RandomWords extends StatelessWidget {
   Widget build(BuildContext context) {
     final wordList = generateWordPairs().take(1).toList();
     final widgets = wordList
-        .map(
-          (word) => Text(
-            word.asCamelCase,
-          ),
-        )
+        .map((word) => Text(
+              word.asCamelCase,
+              style: const TextStyle(fontSize: 32, color: Colors.green),
+            ))
         .toList();
     return Column(
       children: widgets,
+    );
+  }
+}
+
+class GetHeight extends StatelessWidget {
+  const GetHeight({super.key, required this.height});
+
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: height,
     );
   }
 }
