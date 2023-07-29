@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +24,7 @@ class _TestSwitchState extends State<TestSwitch> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        if(Platform.isAndroid)
         Switch(
           value: value,
           onChanged: (bool newValue) {
@@ -46,6 +49,7 @@ class _TestSwitchState extends State<TestSwitch> {
             );
           },
         ),
+        if(Platform.isIOS)
         CupertinoSwitch(
           value: value,
           onChanged: (bool newValue) {

@@ -21,19 +21,15 @@ class _TestSliderState extends State<TestSlider> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Text('$value'),
+        Text('${value.round()}'),
         Slider(
             label: '${value.toInt()}',
             divisions: 100,
             min: 0,
             max: 100,
-            value: value.toDouble(),
+            value: value,
             activeColor: Colors.purple,
-            onChanged: (double newValue) {
-              setState(() {
-                value = newValue;
-              });
-            }),
+            onChanged: (double newValue) => setState(() => value = newValue)),
       ],
     );
   }

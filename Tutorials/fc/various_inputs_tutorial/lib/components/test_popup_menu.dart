@@ -10,7 +10,13 @@ class TestPopUpMenu extends StatefulWidget {
 }
 
 class _TestPopUpMenuState extends State<TestPopUpMenu> {
-  TestValue selectValue = TestValue.test1;
+  late TestValue selectValue;
+
+  @override
+  void initState() {
+    super.initState();
+    selectValue = TestValue.test1;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +30,7 @@ class _TestPopUpMenuState extends State<TestPopUpMenu> {
                     PopupMenuItem(value: value, child: Text(value.name)))
                 .toList();
           },
-          onSelected: (newValue) {
-            setState(() {
-              selectValue = newValue;
-            });
-          },
+          onSelected: (TestValue newValue) => setState(() => selectValue = newValue),
         ),
       ],
     );
