@@ -45,6 +45,8 @@ class _LoginState extends State<Login> {
   TextEditingController passwordTextController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
+  Color textColor = Colors.white;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,10 +72,15 @@ class _LoginState extends State<Login> {
                     children: [
                       Expanded(
                         child: TextFormField(
-                            decoration: const InputDecoration(
-                                border: UnderlineInputBorder(),
-                                hintText: 'Email'),
-                            controller: emailTextController),
+                          decoration: const InputDecoration(
+                              border: UnderlineInputBorder(),
+                              hintText: 'Email'),
+                          controller: emailTextController,
+                          onChanged: (value) {
+                            _changeTextColor();
+                            print(value);
+                          },
+                        ),
                       ),
                     ],
                   ),
@@ -84,13 +91,18 @@ class _LoginState extends State<Login> {
                     children: [
                       Expanded(
                         child: TextFormField(
-                            enableSuggestions: false,
-                            autocorrect: false,
-                            obscureText: true,
-                            decoration: const InputDecoration(
-                                border: UnderlineInputBorder(),
-                                hintText: 'Password'),
-                            controller: passwordTextController),
+                          enableSuggestions: false,
+                          autocorrect: false,
+                          obscureText: true,
+                          decoration: const InputDecoration(
+                              border: UnderlineInputBorder(),
+                              hintText: 'Password'),
+                          controller: passwordTextController,
+                          onChanged: (value) {
+                            _changeTextColor();
+                            print(value);
+                          },
+                        ),
                       ),
                     ],
                   ),
@@ -118,9 +130,9 @@ class _LoginState extends State<Login> {
                         onPressed: () {
                           // TODO: Add Create Account Route
                         },
-                        child: const Text(
+                        child: Text(
                           'Create Account',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: textColor),
                         ),
                       ),
                     ),
@@ -139,12 +151,10 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                         ),
-                        onPressed: () {
-                          saveLoginState(context);
-                        },
-                        child: const Text(
+                        onPressed: () => saveLoginState(context),
+                        child: Text(
                           'Login',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: textColor),
                         ),
                       ),
                     ),
@@ -163,5 +173,16 @@ class _LoginState extends State<Login> {
 
   void saveLoginState(BuildContext context) {
     Provider.of<LoginState>(context, listen: false).loggedIn = true;
+  }
+
+  void _changeTextColor() {
+    setState(() {
+      if (emailTextController.text.length > 8 &&
+          passwordTextController.text.length > 9) {
+        textColor = Colors.black;
+      } else {
+        textColor = Colors.white;
+      }
+    });
   }
 }
