@@ -50,14 +50,18 @@ class AppState extends State<App> with Nav, WidgetsBindingObserver {
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     switch (state) {
+      // 앱이 재개된 상태입니다. 예를 들어, 앱이 포그라운드로 진입한 경우에 해당합니다.
       case AppLifecycleState.resumed:
         App.isForeground = true;
         break;
+      // 앱이 비활성화 상태입니다. 예를 들어, 다른 앱으로 전환되거나 화면이 꺼진 경우에 해당합니다.
       case AppLifecycleState.inactive:
         break;
+      // 앱이 일시 정지 상태입니다. 예를 들어, 앱이 백그라운드로 들어간 경우에 해당합니다.
       case AppLifecycleState.paused:
         App.isForeground = false;
         break;
+      // 앱이 완전히 종료되거나 분리된 상태입니다. 이는 iOS에서만 발생할 수 있으며, 앱이 종료될 때 호출됩니다.
       case AppLifecycleState.detached:
         break;
       case AppLifecycleState.hidden:
