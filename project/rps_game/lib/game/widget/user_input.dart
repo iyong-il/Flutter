@@ -21,7 +21,11 @@ class UserInput extends StatelessWidget {
       return Row(
         children: [
           const Expanded(child: SizedBox.shrink()),
-          Expanded(child: Image.asset(rpsType!.path)),
+          InputCard(
+            () {},
+            rpsType: rpsType!,
+            child: Image.asset(rpsType!.path),
+          ),
           const Expanded(child: SizedBox.shrink()),
         ],
       );
@@ -35,8 +39,8 @@ class UserInput extends StatelessWidget {
     return InputType.values
         .map(
           (e) => InputCard(
+            () => onTap.call(e),
             rpsType: e,
-            onTap: () => onTap.call(e),
             child: Image.asset(e.path),
           ),
         )

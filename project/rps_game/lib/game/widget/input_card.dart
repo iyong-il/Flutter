@@ -4,10 +4,10 @@ import '../enum.dart';
 import 'input_contents.dart';
 
 class InputCard extends StatelessWidget {
-  const InputCard({
+  const InputCard(
+      this.onTap, {
     super.key,
     required this.rpsType,
-    required this.onTap,
     required this.child,
   });
 

@@ -31,9 +31,19 @@ class CpuInput extends StatelessWidget {
         ),
       );
     }
-    return Image.asset(
-      cpuType.path,
-      width: 140,
+    return Row(
+      children: [
+        const Expanded(child: SizedBox.shrink()),
+        InputCard(() {},
+          rpsType: cpuType,
+          child: Image.asset(cpuType.path),
+        ),
+        const Expanded(child: SizedBox.shrink()),
+      ],
     );
+    // return Image.asset(
+    //   cpuType.path,
+    //   width: 140,
+    // );
   }
 }
