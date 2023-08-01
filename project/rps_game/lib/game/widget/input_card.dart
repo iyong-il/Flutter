@@ -5,8 +5,9 @@ import 'input_contents.dart';
 
 class InputCard extends StatelessWidget {
   const InputCard(
-      this.onTap, {
+      {
     super.key,
+    this.onTap,
     required this.rpsType,
     required this.child,
   });

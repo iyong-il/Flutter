@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:rps_game/game/enum.dart';
 import 'package:rps_game/game/widget/input_card.dart';
 
+const emptyExpanded = Expanded(child: SizedBox.shrink());
+
 class CpuInput extends StatelessWidget {
   const CpuInput({super.key, required this.result, required this.cpuType});
 
@@ -32,13 +34,12 @@ class CpuInput extends StatelessWidget {
     }
     return Row(
       children: [
-        const Expanded(child: SizedBox.shrink()),
+        emptyExpanded,
         InputCard(
-          () {},
           rpsType: cpuType,
           child: Image.asset(cpuType.path),
         ),
-        const Expanded(child: SizedBox.shrink()),
+        emptyExpanded,
       ],
     );
   }
