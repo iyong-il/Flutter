@@ -24,7 +24,7 @@ class GameResult extends StatelessWidget {
               style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
             TextButton(
-              child: Text('재시작'),
+              child: const Text('재시작'),
               onPressed: () => onTap.call(),
             )
           ],

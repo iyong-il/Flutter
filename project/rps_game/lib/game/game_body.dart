@@ -59,8 +59,7 @@ class _GameBodyState extends State<GameBody> {
   }
 
   void _setCpuType() {
-    final random = Random();
-    _cpuType = InputType.values[random.nextInt(3)];
+    _cpuType = InputType.values[Random().nextInt(3)];
   }
 
   GameResultType? _getResult() {

@@ -10,14 +10,13 @@ class CpuInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return getCpuinput();
+    return getCpuInput();
   }
 
-  Widget getCpuinput() {
+  Widget getCpuInput() {
     if (!result) {
       return const SizedBox(
         width: double.infinity,
-        // height: 50,
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -34,16 +33,13 @@ class CpuInput extends StatelessWidget {
     return Row(
       children: [
         const Expanded(child: SizedBox.shrink()),
-        InputCard(() {},
+        InputCard(
+          () {},
           rpsType: cpuType,
           child: Image.asset(cpuType.path),
         ),
         const Expanded(child: SizedBox.shrink()),
       ],
     );
-    // return Image.asset(
-    //   cpuType.path,
-    //   width: 140,
-    // );
   }
 }
