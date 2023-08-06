@@ -12,26 +12,30 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late Timer timer;
-  PageController controller = PageController(
-    initialPage: 0,
-  );
+  late PageController controller;
 
   @override
   void initState() {
     super.initState();
-    timer = Timer.periodic(const Duration(seconds: 3), (timer) {
-      int currentPage = controller.page!.toInt();
-      int nextPage = currentPage + 1;
+    controller = PageController(
+      initialPage: 0,
+    );
+    timer = Timer.periodic(
+      const Duration(seconds: 3),
+      (timer) {
+        int currentPage = controller.page!.toInt();
+        int nextPage = currentPage + 1;
 
-      if (nextPage > 4) {
-        nextPage = 0;
-      }
-      controller.animateToPage(
-        nextPage,
-        duration: const Duration(milliseconds: 400),
-        curve: Curves.linear,
-      );
-    });
+        if (nextPage > 4) {
+          nextPage = 0;
+        }
+        controller.animateToPage(
+          nextPage,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.linear,
+        );
+      },
+    );
   }
 
   @override
