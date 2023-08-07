@@ -22,12 +22,12 @@ class BankAccountWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(bankAccount.accountTypeName ?? '${bankAccount.bank.name} 통장')
+              (bankAccount.accountTypeName ?? '${bankAccount.bank.name} 통장')
                   .text
                   .white
                   .size(20)
                   .make(),
-              Text('${bankAccount.balance.toString()} 원')
+              ('${bankAccount.balance.toString()} 원')
                   .text
                   .white
                   .bold

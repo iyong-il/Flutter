@@ -11,14 +11,14 @@ final bankAccountToss =
     BankAccount(bankToss, 333666555980, accountTypeName: '주거래은행 통장');
 
 final List<BankAccount> bankAccounts = [
+  bankAccountToss,
   bankAccountShinhan1,
   bankAccountShinhan2,
+  bankAccountToss,
+  bankAccountKakao,
   bankAccountShinhan2,
+  bankAccountKakao,
   bankAccountShinhan2,
-  bankAccountShinhan2,
-  bankAccountShinhan2,
-  bankAccountShinhan2,
-  bankAccountShinhan3,
   bankAccountKakao,
   bankAccountToss
 ];

@@ -14,7 +14,7 @@ class BigButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tap(
-      onTap: onTap,
+      onTap: () => onTap.call(),
       child: RoundedContainer(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

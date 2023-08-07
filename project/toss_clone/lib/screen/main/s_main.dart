@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import '../../common/common.dart';
-import 'w_menu_drawer.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

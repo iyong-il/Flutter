@@ -21,18 +21,19 @@ enum TabItem {
 
   const TabItem(this.activeIcon, this.tabName, this.firstPage,
       {IconData? inActiveIcon})
-      : inActiveIcon = inActiveIcon ?? activeIcon;
+      : this.inActiveIcon = inActiveIcon ?? activeIcon;
 
   BottomNavigationBarItem toNavigationBarItem(BuildContext context,
       {required bool isActivated}) {
     return BottomNavigationBarItem(
-        icon: Icon(
-          key: ValueKey(tabName),
-          isActivated ? activeIcon : inActiveIcon,
-          color: isActivated
-              ? context.appColors.iconButton
-              : context.appColors.iconButtonInactivate,
-        ),
-        label: tabName);
+      icon: Icon(
+        key: ValueKey(tabName),
+        isActivated ? activeIcon : inActiveIcon,
+        color: isActivated
+            ? context.appColors.iconButton
+            : context.appColors.iconButtonInactivate,
+      ),
+      label: tabName,
+    );
   }
 }

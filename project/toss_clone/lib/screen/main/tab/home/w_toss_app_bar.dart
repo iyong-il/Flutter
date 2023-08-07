@@ -14,7 +14,7 @@ class TossAppBar extends StatefulWidget {
 }
 
 class _TossAppBarState extends State<TossAppBar> {
-  bool _showRedDot = false;
+  final bool _showRedDot = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +35,6 @@ class _TossAppBarState extends State<TossAppBar> {
           ),
           width10,
           Tap(
-            onTap: () {
-              setState(() {
-                _showRedDot != !_showRedDot;
-                // TODO :: 알림화면으로 이동
-                Nav.push(NotificationScreen());
-              });
-            },
             child: Stack(
               children: [
                 Image.asset(
@@ -55,7 +48,7 @@ class _TossAppBarState extends State<TossAppBar> {
                       child: Container(
                         width: 6,
                         height: 6,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.red,
                         ),
@@ -78,10 +71,18 @@ class _TossAppBarState extends State<TossAppBar> {
                 //   )
               ],
             )
-                .animate(onPlay: (controller) => controller.repeat())
-                .shake(duration: 2000.milliseconds)
-                .then()
-                .fadeOut(duration: 2000.milliseconds),
+            // .animate(onPlay: (controller) => controller.repeat())
+            // .shake(duration: 2000.milliseconds)
+            // .then()
+            // .fadeOut(duration: 2000.milliseconds),
+            ,
+            onTap: () {
+              setState(() {
+                _showRedDot != !_showRedDot;
+                // TODO :: 알림화면으로 이동
+                Nav.push(const NotificationScreen());
+              });
+            },
           ),
           width10,
         ],

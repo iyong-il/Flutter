@@ -11,7 +11,7 @@ class EmptyExpanded extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: flex,
-      child: Container(),
+      child: const SizedBox.shrink(),
     );
   }
 }

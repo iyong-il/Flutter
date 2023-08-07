@@ -15,9 +15,7 @@ import '../../../dialog/d_confirm.dart';
 import 'w_bank_account.dart';
 
 class HomeFragment extends StatelessWidget {
-  const HomeFragment({
-    Key? key,
-  }) : super(key: key);
+  const HomeFragment({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,37 +23,45 @@ class HomeFragment extends StatelessWidget {
       color: Colors.black,
       child: Stack(
         children: [
-          LiveBackgroundWidget(),
+          // const LiveBackgroundWidget(),
           RefreshIndicator(
             edgeOffset: TossAppBar.appbarHeight,
             onRefresh: () async {
               await sleepAsync(500.milliseconds);
             },
             child: SingleChildScrollView(
-              padding: const EdgeInsets.only(top: TossAppBar.appbarHeight, bottom: MainScreenState.bottomNavigationHeight),
-              child: Column(
-                children: [
-                  BigButton(
-                    '토스뱅크',
-                    onTap: () {
-                      context.showSnackbar('토스뱅크를 눌렀어요');
-                    },
-                  ),
-                  height10,
-                  RoundedContainer(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        '자산'.text.bold.white.size(20).make(),
-                        height5,
-                        ...bankAccounts.map((e) => BankAccountWidget(e)).toList()
-                      ],
+                padding: const EdgeInsets.only(
+                  top: TossAppBar.appbarHeight,
+                  bottom: MainScreenState.bottomNavigationHeight,
+                ),
+                child: Column(
+                  children: [
+                    BigButton(
+                      '토스뱅크',
+                      onTap: () => context.showSnackbar('토스뱅크를 눌렀어요'),
                     ),
-                  )
-                ],
-              ).pSymmetric(v: 20).animate().slideY(duration: 3000.milliseconds).fadeIn(),
-            ),
-
+                    height10,
+                    RoundedContainer(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          '자산'.text.bold.white.size(20).make(),
+                          height5,
+                          ...bankAccounts
+                              .map((e) => BankAccountWidget(e))
+                              .toList()
+                        ],
+                      ),
+                    )
+                  ],
+                ).pOnly(
+                  top: 10,
+                  bottom: 20,
+                )
+                // .animate()
+                // .slideY(duration: 3000.milliseconds)
+                // .fadeIn(),
+                ),
           ),
           const TossAppBar()
         ],
