@@ -8,8 +8,8 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(const MaterialApp(
-    home: HomeScreen(
-    ),
+    debugShowCheckedModeBanner: false,
+    home: HomeScreen(),
   ));
 }
 // ...PlatformException...이 나오면 terminal에 flutter clean을 해줘야한다.

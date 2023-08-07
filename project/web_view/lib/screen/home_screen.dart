@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 final googleUrl = Uri.parse('https://www.google.co.kr/?hl=ko');
-final naverUrl = Uri.parse('https://www.naver.com/');
+final naverUrl = Uri.parse('https://whale.naver.com/');
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
