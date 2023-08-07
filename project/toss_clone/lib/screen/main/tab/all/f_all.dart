@@ -1,6 +1,4 @@
 import 'package:fast_app_base/common/common.dart';
-import 'package:fast_app_base/common/widget/w_big_button.dart';
-import 'package:fast_app_base/common/widget/w_empty_expanded.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/widget/w_image_button.dart';
@@ -26,13 +24,13 @@ class _AllFragmentState extends State<AllFragment> {
           actions: [
             ImageButton(
               onTap: () {
-                Nav.push(SearchStockScreen());
+                Nav.push(const SearchStockScreen());
               },
               imagePath: '$basePath/icon/stock_search.png',
             ),
             ImageButton(
               onTap: () {
-                Nav.push(SettingScreen());
+                Nav.push(const SettingScreen());
               },
               imagePath: '$basePath/icon/stock_settings.png',
             ),
@@ -60,7 +58,7 @@ class _AllFragmentState extends State<AllFragment> {
                 title: '진행중인 이벤트',
                 onTap: () {},
               ),
-              Line(),
+              const Line(),
               LongButton(
                 icon: Icon(Icons.add),
                 title: '토스프라임',
@@ -90,30 +88,28 @@ class _AllFragmentState extends State<AllFragment> {
         child: '토스증권'.text.size(24).bold.make(),
       );
 
-  get top => Container(
-        child: Row(
-          children: [
-            Expanded(
-              child: Container(
-                height: 60,
-                color: Colors.green,
-              ),
+  Widget get top => Row(
+        children: [
+          Expanded(
+            child: Container(
+              height: 60,
+              color: Colors.red,
             ),
-            width10,
-            Expanded(
-              child: Container(
-                height: 60,
-                color: Colors.green,
-              ),
+          ),
+          width10,
+          Expanded(
+            child: Container(
+              height: 60,
+              color: Colors.green,
             ),
-            width10,
-            Expanded(
-              child: Container(
-                height: 60,
-                color: Colors.green,
-              ),
+          ),
+          width10,
+          Expanded(
+            child: Container(
+              height: 60,
+              color: Colors.blue,
             ),
-          ],
-        ),
+          ),
+        ],
       );
 }
