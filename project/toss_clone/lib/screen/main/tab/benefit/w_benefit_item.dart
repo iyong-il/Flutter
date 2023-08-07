@@ -11,10 +11,13 @@ class BenefitItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(
-          benefit.imagePath,
-          width: 50,
-          height: 50,
+        ClipRRect(
+          borderRadius: BorderRadius.circular(25),
+          child: Image.asset(
+            benefit.imagePath,
+            width: 50,
+            height: 50,
+          ),
         ),
         width10,
         Column(
